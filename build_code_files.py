@@ -396,7 +396,7 @@ module.exports = { app, activeUsers };
         "socket.io-client": "^4.1.3",
         "cypress": "^8.3.0",
         "artillery": "^1.7.8",
-        "zap-client": "^0.2.0",
+        "zaproxy": "^0.3.7",
         "eslint": "^7.32.0",
         "eslint-plugin-mocha": "^9.0.0",
         "nodemon": "^2.0.12"
@@ -534,65 +534,3 @@ if __name__ == '__main__':
     # Create the project structure
     create_project_structure(base_directory, project_structure)
     print('Project structure created successfully.')
-# ```
-
-# **Instructions:**
-
-# 1. **Save the Script**
-
-#    Save the code above into a file named `setup_project.py` in the directory where you want the project to be created.
-
-# 2. **Run the Script**
-
-#    Open a terminal, navigate to the directory containing `setup_project.py`, and run:
-
-#    ```bash
-#    python setup_project.py
-#    ```
-
-# 3. **Verify the Structure**
-
-#    After running the script, you should see the project files and directories created as described.
-
-# **Note:** The script will create the following structure:
-
-# ```
-# project-root/
-# ├── public/
-# │   ├── index.html
-# │   ├── css/
-# │   │   └── styles.css
-# │   └── js/
-# │       ├── app.js
-# │       ├── canvas.js
-# │       └── socket.js
-# ├── server/
-# │   └── server.js
-# ├── tests/
-# ├── package.json
-# ├── .eslintrc.js
-# ├── .gitignore
-# └── README.md
-# ```
-
-# **Next Steps:**
-
-# - **Install Dependencies**
-
-#   Navigate to the project directory and install the necessary Node.js dependencies:
-
-#   ```bash
-#   npm install
-#   ```
-
-# - **Start the Application**
-
-#   Run the application using:
-
-#   ```bash
-#   npm start
-#   ```
-
-# - **Access the Application**
-
-#   Open your web browser and go to `http://localhost:3000` to see the realtime collaborative whiteboard in action.

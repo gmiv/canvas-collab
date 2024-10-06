@@ -4,7 +4,7 @@
  */
 
 // Ensure OWASP ZAP is running and the API is accessible
-const ZapClient = require('zaproxy');
+const ZapClient = require('owasp-zap-v2');
 const { expect } = require('chai');
 
 const zapOptions = {

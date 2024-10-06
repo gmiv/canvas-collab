@@ -6,16 +6,19 @@
 const { JSDOM } = require('jsdom');
 const { expect } = require('chai');
 const sinon = require('sinon');
+const { createCanvas } = require('canvas');
 
 // Mock the DOM and Canvas
-const dom = new JSDOM(`<!DOCTYPE html><html><body><canvas id="drawingCanvas"></canvas></body></html>`);
+const dom = new JSDOM(`<!DOCTYPE html><html><body><canvas id="drawingCanvas"></canvas></body></html>`, {
+  pretendToBeVisual: true,
+});
 global.window = dom.window;
 global.document = dom.window.document;
 
-// Mock Canvas API
-const mockCanvas = require('canvas-prebuilt'); // Use an appropriate canvas mocking library
-global.HTMLCanvasElement.prototype.getContext = () => {
+// Attach the canvas to the window
+global.window.HTMLCanvasElement.prototype.getContext = function () {
   return {
+    // Mocked context methods
     beginPath: sinon.spy(),
     moveTo: sinon.spy(),
     lineTo: sinon.spy(),
@@ -23,6 +26,7 @@ global.HTMLCanvasElement.prototype.getContext = () => {
     closePath: sinon.spy(),
     lineWidth: 1,
     strokeStyle: '#000000',
+    lineCap: 'butt',
   };
 };
 
