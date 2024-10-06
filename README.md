@@ -1,21 +1,83 @@
-# canvas-collab
-A super simple canvas painter in vanilla JavaScript with Socket.io over Node.js.
+# Canvas Collab
+
 > Realtime Collaborative Whiteboard
 
-## Features
+This project is a super simple canvas painter in vanilla JavaScript with Socket.io over Node.js.
 
-- Real-time drawing synchronization among users.
-- Support for mouse and touch input.
-- Simple round marker with thickness adjustments.
-- No authentication required; users enter a name on page load.
-- Handles duplicate names and assigns small IDs if no name is entered.
-- Unlimited number of users can collaborate simultaneously.
+## Project Structure
 
-## Installation
+- **public/**: Frontend files served to clients
+  - **index.html**: Main HTML file
+  - **css/**
+    - **styles.css**: CSS styles
+  - **js/**
+    - **app.js**: Main client-side JavaScript
+    - **canvas.js**: Canvas drawing functionalities
+    - **socket.js**: Socket.io client-side logic
+- **server/**
+  - **server.js**: Node.js server with Socket.io
+- **tests/**: Tests directory (unit, integration, system, performance, security)
+- **package.json**: Project dependencies and scripts
+- **.eslintrc.js**: Linting configuration
+- **.gitignore**: Git ignore file
+- **README.md**: Project documentation
 
-1. **Clone the repository:**
+## Setup Instructions
+
+1. **Install Dependencies**
 
    ```bash
-   git clone https://github.com/yourusername/realtime-collaborative-whiteboard.git
-   cd realtime-collaborative-whiteboard
+   npm install
    ```
+
+2. **Run the Application**
+
+   ```bash
+   npm start
+   ```
+
+3. **Access the Application**
+
+   Open your web browser and navigate to `http://localhost:3000`.
+
+## Testing
+
+- **Unit Tests**
+
+  ```bash
+  npm run test:unit
+  ```
+
+- **Integration Tests**
+
+  ```bash
+  npm run test:integration
+  ```
+
+- **System Tests**
+
+  ```bash
+  npm run test:system
+  ```
+
+- **Performance Tests**
+
+  ```bash
+  npm run test:performance
+  ```
+
+- **Security Tests**
+
+  ```bash
+  npm run test:security
+  ```
+
+- **Run All Tests**
+
+  ```bash
+  npm test
+  ```
+
+## License
+
+This project is licensed under the MIT License.

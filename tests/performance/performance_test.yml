@@ -1,0 +1,16 @@
+# performance_test.yml
+config:
+  target: 'http://localhost:3000' # Adjust the URL and port as needed
+  phases:
+    - duration: 60   # Test duration in seconds
+      arrivalRate: 10 # Number of users to simulate per second
+  processor: './processors.js' # Custom JS functions (optional)
+
+scenarios:
+  - engine: 'ws' # Use WebSocket protocol
+    flow:
+      - function: 'connectSocket'
+      - loop:
+          - think: 1 # Wait for 1 second
+          - function: 'sendDrawingData'
+        count: 60 # Number of times to send drawing data

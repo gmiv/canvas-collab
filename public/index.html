@@ -1,0 +1,33 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Realtime Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Name Input Modal -->
+    <div id="nameModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Your Name</h2>
+            <input type="text" id="nameInput" placeholder="Your Name">
+            <button id="nameSubmit">Submit</button>
+        </div>
+    </div>
+    <!-- User Name Display -->
+    <div id="userNameDisplay"></div>
+    <!-- Marker Thickness Control -->
+    <div id="controls">
+        <label for="thicknessRange">Marker Thickness:</label>
+        <input type="range" id="thicknessRange" min="1" max="20" value="5">
+    </div>
+    <!-- Canvas Element -->
+    <canvas id="drawingCanvas"></canvas>
+    <!-- Client-side Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/socket.js"></script>
+</body>
+</html>
